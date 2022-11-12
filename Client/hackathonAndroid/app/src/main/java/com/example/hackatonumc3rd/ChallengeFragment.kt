@@ -1,5 +1,6 @@
 package com.example.hackatonumc3rd
 
+import android.app.ProgressDialog.show
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,9 +18,13 @@ class ChallengeFragment: Fragment() {
     ): View? {
         viewBinding = FragmentChallengeBinding.inflate(layoutInflater)
 
+        viewBinding.button.setOnClickListener{
+            val bottomSheet = ChallengeBottomSheetFragment()
+            bottomSheet.show(childFragmentManager, bottomSheet.tag)
+        }
 
 
 
-        return FragmentChallengeBinding.inflate(layoutInflater).root
+        return viewBinding.root
     }
 }
