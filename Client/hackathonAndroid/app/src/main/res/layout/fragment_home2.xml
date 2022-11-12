@@ -79,12 +79,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
+
+
+            <Button
+                android:id="@+id/btn_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/round"
+                android:backgroundTint="@color/white"
+                android:text="학교"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ranking" />
+
             <View
                 android:id="@+id/view_lineart2"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="19dp"
+                android:layout_marginTop="20dp"
                 android:background="#DDDDDD"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -95,61 +109,41 @@
                 android:id="@+id/tv_ranking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="194dp"
                 android:text="이달의 술 랭킹"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_rankingLook"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_makeNew" />
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 
             <TextView
                 android:id="@+id/tv_rankingLook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:text="전체보기"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ranking"
                 app:layout_constraintEnd_toStartOf="@+id/btn_goRank"
                 app:layout_constraintTop_toTopOf="@+id/tv_ranking"
-                app:layout_constraintVertical_bias="0.666" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/btn_goRank"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="32dp"
                 android:layout_marginBottom="3dp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_rankingLook"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_rankingLook"
-                app:layout_constraintVertical_bias="0.428"
+                app:layout_constraintVertical_bias="0.285"
                 app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
-
-            <Button
-                android:id="@+id/btn_school"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/round"
-                android:backgroundTint="@color/white"
-                android:text="학교"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ranking" />
-
-            <Button
-                android:id="@+id/btn_depart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/round"
-                android:backgroundTint="@color/white"
-                android:text="학과"
-                app:layout_constraintStart_toEndOf="@+id/btn_school"
-                app:layout_constraintTop_toTopOf="@+id/btn_school" />
 
             <Button
                 android:id="@+id/btn_person"
@@ -159,8 +153,19 @@
                 android:background="@drawable/round"
                 android:backgroundTint="@color/white"
                 android:text="개인"
-                app:layout_constraintStart_toEndOf="@+id/btn_depart"
-                app:layout_constraintTop_toTopOf="@+id/btn_depart" />
+                app:layout_constraintStart_toEndOf="@+id/btn_depart2"
+                app:layout_constraintTop_toTopOf="@+id/btn_depart2" />
+
+            <Button
+                android:id="@+id/btn_depart2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/round"
+                android:backgroundTint="@color/white"
+                android:text="학과"
+                app:layout_constraintStart_toEndOf="@+id/btn_school"
+                app:layout_constraintTop_toTopOf="@+id/btn_school" />
 
             <Button
                 android:id="@+id/btn_class"
@@ -172,29 +177,16 @@
                 android:backgroundTint="@color/white"
                 android:text="모임"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.23"
+                app:layout_constraintHorizontal_bias="0.911"
                 app:layout_constraintStart_toEndOf="@+id/btn_person"
                 app:layout_constraintTop_toTopOf="@+id/btn_person" />
-
-            <TextView
-                android:id="@+id/tv_makeNew"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:text="새로운 술자리 그룹을 만들어 볼까요?"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_lineart" />
 
             <TextView
                 android:id="@+id/tv_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="19dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
                 android:text="진행중인 이벤트"
                 android:textColor="#000000"
                 android:textSize="16sp"
@@ -206,40 +198,33 @@
                 android:id="@+id/tv_eventLook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:text="전체보기"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_event"
                 app:layout_constraintEnd_toStartOf="@+id/btn_goEvent"
                 app:layout_constraintTop_toTopOf="@+id/tv_event"
-                app:layout_constraintVertical_bias="0.833" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/btn_goEvent"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_eventLook"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_eventLook"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="75dp"
-                android:layout_height="31dp"
-                android:layout_marginEnd="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_makeNew"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_makeNew"
-                app:srcCompat="@drawable/make" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/container_ranking"
                 android:layout_width="364dp"
                 android:layout_height="217dp"
-                android:layout_marginTop="19dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.34"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_school" />
 
@@ -316,9 +301,86 @@
                     android:text="이벤트 참가" />
             </LinearLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="409dp"
+                android:layout_height="164dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_ranking"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_lineart">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="18dp"
+                    android:text="UMC Android 회식"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="역전할머니 맥주 한양대점"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오후 10:00 부터 시작"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView27"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="멤버 수정"
+                    app:layout_constraintStart_toStartOf="@+id/textView28"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                <Button
+                    android:id="@+id/btn_auth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="술 인증하기"
+                    app:layout_constraintStart_toEndOf="@+id/button5"
+                    app:layout_constraintTop_toTopOf="@+id/button5" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="30점"
+                    android:textColor="#000000"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
