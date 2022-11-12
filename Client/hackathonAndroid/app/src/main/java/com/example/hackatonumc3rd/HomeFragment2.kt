@@ -1,5 +1,7 @@
 package com.example.hackatonumc3rd
 
+import com.example.hackatonumc3rd.databinding.FragmentHome2Binding
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,16 +16,28 @@ import com.example.hackatonumc3rd.databinding.FragmentHomeBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
-class HomeFragment: Fragment() {
-    private lateinit var viewBinding: FragmentHomeBinding
+class HomeFragment2: Fragment() {
+    private lateinit var viewBinding: FragmentHome2Binding
     private val mLayoutManager: RecyclerView.LayoutManager? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val bottomSheet = AuthBottomSheet()
 
-        viewBinding = FragmentHomeBinding.inflate(layoutInflater)
+        viewBinding = FragmentHome2Binding.inflate(layoutInflater)
+
+        viewBinding.btnAuth.setOnClickListener {
+            bottomSheet.show(childFragmentManager, bottomSheet.tag)
+        }
+
+        childFragmentManager.setFragmentResultListener("requestKey", this) { requestKey, bundle ->
+            val message = bundle.getString("bundleKey")
+
+            if (message == "done")
+                bottomSheet.dismiss()
+        }
 
         viewBinding.imgMap.setOnClickListener {
             val intent = Intent(context, MapActivity::class.java)
@@ -68,7 +82,7 @@ class HomeFragment: Fragment() {
             viewBinding.containerRanking.adapter = dataRVAdaptor_school
             viewBinding.containerRanking.layoutManager = LinearLayoutManager(context)
         }
-        viewBinding.btnDepart.setOnClickListener {
+        viewBinding.btnDepart2.setOnClickListener {
             viewBinding.containerRanking.adapter = dataRVAdaptor_dapart
             viewBinding.containerRanking.layoutManager = LinearLayoutManager(context)
         }
@@ -82,12 +96,6 @@ class HomeFragment: Fragment() {
         }
 
         return viewBinding.root
-
-        viewBinding.imageView.setOnClickListener{
-            val bottomSheet = bottomSheet()
-            bottomSheet.show(childFragmentManager,bottomSheet.tag)
-
-        }
     }
 }
 

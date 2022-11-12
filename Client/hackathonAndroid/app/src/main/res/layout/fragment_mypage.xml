@@ -262,7 +262,7 @@
 
     <ScrollView
         android:id="@+id/mypage_list_container"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -355,19 +355,6 @@
                 android:background="#dedede"
                 android:layout_gravity="center"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_alert"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textAlignment="textStart"
-                android:paddingLeft="57dp"
-                android:text="공지사항"/>
 
         </LinearLayout>
     </ScrollView>
