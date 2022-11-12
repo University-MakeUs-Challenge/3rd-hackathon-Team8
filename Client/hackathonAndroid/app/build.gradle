@@ -38,6 +38,9 @@ dependencies {
     //kakao map\
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/libDaumMapAndroid.jar')
+
+    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    implementation 'com.google.android.material:material:1.5.0-alpha02'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
