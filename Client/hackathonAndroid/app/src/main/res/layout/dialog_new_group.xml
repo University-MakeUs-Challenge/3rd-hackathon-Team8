@@ -173,6 +173,7 @@
     </ScrollView>
     
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_group_next"
         android:layout_width="342dp"
         android:layout_height="48dp"
         android:insetTop="0dp"

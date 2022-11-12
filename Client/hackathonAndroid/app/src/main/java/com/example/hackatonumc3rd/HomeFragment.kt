@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.setFragmentResult
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hackatonumc3rd.databinding.FragmentHomeBinding
@@ -81,13 +83,26 @@ class HomeFragment: Fragment() {
             viewBinding.containerRanking.layoutManager = LinearLayoutManager(context)
         }
 
+        val bottomSheet = bottomSheet()
+
+        viewBinding.btnAddGroup.setOnClickListener{
+            bottomSheet.show(childFragmentManager,bottomSheet.tag)
+        }
+
+        childFragmentManager.setFragmentResultListener("requestKey", this) { requestKey, bundle ->
+            val message = bundle.getString("bundleKey")
+
+            if (message == "go2") {
+                bottomSheet.dismiss()
+
+                val result = "goHome2"
+                // Use the Kotlin extension in the fragment-ktx artifact
+                setFragmentResult("requestKey", bundleOf("bundleKey" to result))
+            }
+        }
+
         return viewBinding.root
 
-        viewBinding.imageView.setOnClickListener{
-            val bottomSheet = bottomSheet()
-            bottomSheet.show(childFragmentManager,bottomSheet.tag)
-
-        }
     }
 }
 

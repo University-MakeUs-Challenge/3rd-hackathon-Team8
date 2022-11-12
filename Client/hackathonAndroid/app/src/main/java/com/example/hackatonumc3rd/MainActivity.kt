@@ -2,6 +2,8 @@ package com.example.hackatonumc3rd
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import com.example.hackatonumc3rd.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +51,19 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             selectedItemId = R.id.menu_home
+
+            supportFragmentManager.setFragmentResultListener(
+                "requestKey",
+                this@MainActivity
+            ) { requestKey, bundle ->
+
+                val message = bundle.getString("bundleKey")
+                if (message == "goHome2")
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(viewBinding.containerFragment.id, HomeFragment2())
+                        .commitAllowingStateLoss()
+            }
         }
     }
 }
