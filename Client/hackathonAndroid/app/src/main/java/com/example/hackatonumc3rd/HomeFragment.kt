@@ -45,16 +45,12 @@ class HomeFragment: Fragment() {
 
         viewBinding.containerRanking.adapter = dataRVAdaptor
         viewBinding.containerRanking.layoutManager = LinearLayoutManager(context)
-
+'b'
         return viewBinding.root
 
         viewBinding.imageView.setOnClickListener{
-            val dialogView = layoutInflater.inflate(R.layout.dialog_new_group, null)
-            val dialog = BottomSheetDialog(requireContext())
-            dialog.setContentView(dialogView)
-            dialog.show()
-            //val bottomSheet = bottomSheet()
-            //bottomSheet.show(childFragmentManager,bottomSheet.tag)
+            val bottomSheet = bottomSheet()
+            bottomSheet.show(childFragmentManager,bottomSheet.tag)
 
         }
     }
