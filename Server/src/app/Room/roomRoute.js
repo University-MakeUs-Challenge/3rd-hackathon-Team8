@@ -6,9 +6,9 @@ module.exports = function (app) {
   app.get("/rooms", room.getRoom);
 
   // 2. 방 생성 Post
-  //app.post("/rooms", room.postRoom);
+  app.post("/rooms", room.postRoom);
 
-  // 3. 새로운 방 생성
+  // 3. 새로운 방 생성 페이지
   //app.get("/rooms/create", room.createRoom);
 
   // 4. 대기 중인 방 상세정보

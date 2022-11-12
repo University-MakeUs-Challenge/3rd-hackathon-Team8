@@ -36,3 +36,16 @@ exports.editRoom = async function (roomidx, roomtitle) {
     return errResponse(baseResponse.DB_ERROR);
   }
 };
+
+exports.createRoom = async function (time_limit, roomTitle, totalMembers) {
+  const insertRoomInfoParams = [time_limit, roomTitle, totalMembers];
+
+  const connection = await pool.getConnection(async (conn) => conn);
+
+  const roominsertResult = await roomDao.insertRoomInfo(
+    connection,
+    insertRoomInfoParams
+  );
+  connection.release();
+  return response(baseResponse.SUCCESS);
+};

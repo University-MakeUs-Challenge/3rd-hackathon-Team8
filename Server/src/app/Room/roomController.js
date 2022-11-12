@@ -1,7 +1,9 @@
 const jwtMiddleware = require("../../../config/jwtMiddleware");
 const roomProvider = require("../../app/Room/roomProvider");
+const { pool } = require("../../../config/database");
 const roomService = require("../../app/Room/roomService");
 const baseResponse = require("../../../config/baseResponseStatus");
+const roomDao = require("./roomDao");
 const { response, errResponse } = require("../../../config/response");
 
 /**
@@ -21,6 +23,24 @@ exports.getRoom = async function (req, res) {
  * [POST] /rooms
  * 작성자 : 폴
  */
+exports.postRoom = async function (req, res) {
+  const { roomTitle, time_limit, totalMembers } = req.body;
+
+  // 빈 값 체크
+  if (!roomTitle) return res.send(response(baseResponse.ROOM_TITLE_EMPTY));
+
+  // 길이 체크
+  if (roomTitle.length > 30)
+    return res.send(response(baseResponse.ROOM_TITLE_LENGTH));
+
+  const roomCreateResponce = await roomService.createRoom(
+    time_limit,
+    roomTitle,
+    totalMembers
+  );
+
+  return res.send(roomCreateResponce);
+};
 
 /**
  * API No. 4

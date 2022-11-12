@@ -3,7 +3,7 @@ async function selectRoom(connection) {
   const selectRoomListQuery = `
     select Room.roomTitle, Room.totalMember, College.collegeName from Room
     join User on Room.userIdx = User.collegeIdx
-    join College on User.collegeIdx = College.Idx where Room.status = "가능";
+    join College on User.collegeIdx = College.Idx;
                 `;
   const [roomRows] = await connection.query(selectRoomListQuery);
   return roomRows;
@@ -48,8 +48,20 @@ async function selectRoomKm(connection, km) {
   *cos(radians(${myLong}) - radians(longitude))
   + sin(radians(${myLat}))*sin(radians(latitude)))), 2)) < 10000;
   `;
-  const [roomRow] = await connection.query(selectRoomkmQuery, km);
+  const roomRow = await connection.query(selectRoomkmQuery, km);
   return roomRow;
+}
+async function insertRoomInfo(connection, insertRoomInfoParams) {
+  const insertRoomQuery = `
+      INSERT INTO Room(timeLimit,roomTitle, totalMember) 
+      Values (?,?,?);
+  `;
+  const insertRoomInfoRow = await connection.query(
+    insertRoomQuery,
+    insertRoomInfoParams
+  );
+
+  return insertRoomInfoRow;
 }
 module.exports = {
   selectRoom,
@@ -57,4 +69,5 @@ module.exports = {
   selectRoomIdx,
   updateRoomInfo,
   selectRoomKm,
+  insertRoomInfo,
 };
