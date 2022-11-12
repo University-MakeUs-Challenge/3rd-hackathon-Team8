@@ -150,17 +150,17 @@
                 android:background="@drawable/round"
                 android:backgroundTint="@color/white"
                 android:text="개인"
-                app:layout_constraintStart_toEndOf="@+id/btn_person2"
-                app:layout_constraintTop_toTopOf="@+id/btn_person2" />
+                app:layout_constraintStart_toEndOf="@+id/btn_depart2"
+                app:layout_constraintTop_toTopOf="@+id/btn_depart2" />
 
             <Button
-                android:id="@+id/btn_person2"
+                android:id="@+id/btn_depart2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/round"
                 android:backgroundTint="@color/white"
-                android:text="개인"
+                android:text="학과"
                 app:layout_constraintStart_toEndOf="@+id/btn_school"
                 app:layout_constraintTop_toTopOf="@+id/btn_school" />
 
