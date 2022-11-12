@@ -2,7 +2,7 @@
 async function selectUser(connection) {
   const selectUserListQuery = `
                 SELECT email, nickname 
-                FROM UserInfo;
+                FROM User;
                 `;
   const [userRows] = await connection.query(selectUserListQuery);
   return userRows;
@@ -51,8 +51,8 @@ async function selectUserPassword(connection, selectUserPasswordParams) {
         FROM UserInfo 
         WHERE email = ? AND password = ?;`;
   const selectUserPasswordRow = await connection.query(
-      selectUserPasswordQuery,
-      selectUserPasswordParams
+    selectUserPasswordQuery,
+    selectUserPasswordParams
   );
 
   return selectUserPasswordRow;
@@ -65,8 +65,8 @@ async function selectUserAccount(connection, email) {
         FROM UserInfo 
         WHERE email = ?;`;
   const selectUserAccountRow = await connection.query(
-      selectUserAccountQuery,
-      email
+    selectUserAccountQuery,
+    email
   );
   return selectUserAccountRow[0];
 }
@@ -79,7 +79,6 @@ async function updateUserInfo(connection, id, nickname) {
   const updateUserRow = await connection.query(updateUserQuery, [nickname, id]);
   return updateUserRow[0];
 }
-
 
 module.exports = {
   selectUser,

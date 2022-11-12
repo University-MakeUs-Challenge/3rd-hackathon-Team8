@@ -6,9 +6,15 @@
     "auditLog": "log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json",
     "files": [
         {
-            "date": 1614599803901,
-            "name": "log/2021-03-01-smart-push.log",
-            "hash": "556147ac82c7393a4366d0efd7d13150"
+            "date": 1668253268192,
+            "name": "log/2022-11-12-smart-push.log",
+            "hash": "1de4ee1d25fdfda0da19fa97afe648a4e1186bf18ab17ecbb58515c3acb69787"
+        },
+        {
+            "date": 1668266991528,
+            "name": "log/2022-11-13-smart-push.log",
+            "hash": "d09a908fa2f78151a3d8e5b60ca5fc114d343958c12f44089ad480f40bb7f823"
         }
-    ]
+    ],
+    "hashType": "sha256"
 }
