@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">hackatonUMC3rd</string>
+    <string name="menu_home">홈</string>
+    <string name="menu_friend">친구</string>
+    <string name="menu_challenge">챌린지</string>
+    <string name="menu_mypage">마이페이지</string>
+</resources>
